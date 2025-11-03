@@ -38,6 +38,11 @@ public class AllDivisors {
         return divisors;
     }
 
+    /**
+     * Optimized Approach
+     * Time Complexity: O(sqrt(N))
+     * Space Complexity: O(1)
+     */
     private static List<Integer> printAllDivisorsOptimized(int n) {
         List<Integer> divisors = new ArrayList<>();
         for (int i = 1; i * i <= n; i++) {
