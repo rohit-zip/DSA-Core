@@ -14,16 +14,16 @@ package basics;
 public class IsPrime {
 
     public static void main(String[] args) {
-        int n = 29;
+        int n = 1483;
         boolean isPrime = checkPrime(n);
         System.err.println(isPrime ? n + " is a prime number." : n + " is not a prime number.");
     }
 
     private static boolean checkPrime(int n) {
         int count = 0;
-        for (int i = 0; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {
             if (n % i == 0) {
-                count++;
+                count = count +1;
             }
         }
         return count == 2;
