@@ -15,6 +15,11 @@ import java.util.Scanner;
  */
 public class FrequencyMap {
 
+    /**
+     * Count frequency of elements in an array using HashMap
+     * Time Complexity: O(N)
+     * Space Complexity: O(N) in worst case all elements are distinct
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.err.println("Enter the size of array: ");
