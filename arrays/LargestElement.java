@@ -30,6 +30,12 @@ public class LargestElement {
         System.out.println("The largest element in the array is: " + largestElement(arr));
     }
 
+    /**
+     * Time Complexity: O(N)
+     * Space Complexity: O(1)
+     * @param arr
+     * @return
+     */
     private static int largestElement(int[] arr) {
         int largest = Integer.MIN_VALUE;
         for (int i : arr) {
@@ -39,10 +45,14 @@ public class LargestElement {
         return largest;
     }
 
+    /**
+     * Using Stream API
+     * Time Complexity: O(N)
+     * Space Complexity: O(1)
+     * @param arr
+     * @return
+     */
     private static int usingStream(int[] arr) {
-        return Arrays
-                .stream(arr)
-                .max()
-                .orElse(Integer.MIN_VALUE);
+        return Arrays.stream(arr).max().orElse(Integer.MIN_VALUE);
     }
 }
