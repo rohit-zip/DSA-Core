@@ -28,7 +28,7 @@ package arrays;
  last index which is also by the way the first index.
 
  */
-public class LeftRotateArray {
+public class LeftRotateArrayOne {
 
     public static void main(String[] args) {
         int[] arr = {1,2,3,4,5};
