@@ -9,6 +9,20 @@ package arrays;
 
 import java.util.Arrays;
 
+/*
+  Problem Statement:
+  Write a function to reverse an array of integers in place. Implement both an iterative and a recursive approach.
+
+  Examples:
+  Input: [1, 2, 3, 4, 5]
+  Output: [5, 4, 3, 2, 1]
+
+  Input: [10, 20, 30]
+  Output: [30, 20, 10]
+
+  Input: [7]
+  Output: [7]
+*/
 public class ReverseArray {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5};
