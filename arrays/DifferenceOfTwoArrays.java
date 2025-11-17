@@ -9,6 +9,29 @@ package arrays;
 
 import java.util.Arrays;
 
+/*
+  Problem Statement:
+  Given two arrays representing two non-negative integers, where each element in the array is a single digit and the most significant digit comes first, write a function to return their difference as an array of digits (i.e., arr1 - arr2). Assume arr1 represents a number greater than or equal to arr2.
+
+  The two input arrays may have different lengths. The output should not contain any leading zeros unless the difference is zero.
+
+  Examples:
+  Example 1:
+    Input: arr1 = [3,3,3,3,3,3], arr2 = [9,9,9,9,9]
+    Output: [3,2,3,3,3,4]
+    Explanation: 333333 - 99999 = 323334
+
+  Example 2:
+    Input: arr1 = [1,0,0,0], arr2 = [1]
+    Output: [9,9,9]
+    Explanation: 1000 - 1 = 999
+
+  Example 3:
+    Input: arr1 = [5,0,0], arr2 = [5,0,0]
+    Output: [0]
+    Explanation: 500 - 500 = 0
+*/
+
 public class DifferenceOfTwoArrays {
 
     public static void main(String[] args) {
