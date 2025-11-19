@@ -6,7 +6,6 @@ package recursion;
   GitHub: github.com/rohit-zip
   File: ArrayMax
  */
-
 public class ArrayMax {
 
     public static void main(String[] args) {
