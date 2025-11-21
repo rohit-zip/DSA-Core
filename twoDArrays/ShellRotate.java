@@ -9,6 +9,36 @@ package twoDArrays;
 
 import java.util.Scanner;
 
+/*
+ * Problem Statement:
+ * Given a 2D array (matrix), perform a shell rotation on a specified shell (layer) of the matrix.
+ * A shell is a concentric layer of the matrix, starting from the outermost layer (shell 1).
+ * Rotate the elements of the specified shell by a given number of positions in a clockwise direction.
+ *
+ * Input:
+ * - The first line contains two integers, row and col, representing the number of rows and columns.
+ * - The next row*col integers represent the elements of the matrix.
+ * - The shell number (1-based) and the number of rotations.
+ *
+ * Output:
+ * - The matrix after rotating the specified shell.
+ *
+ * Example:
+ * Input:
+ * 4 4
+ * 1 2 3 4
+ * 5 6 7 8
+ * 9 10 11 12
+ * 13 14 15 16
+ * Shell: 2
+ * Rotate: 2
+ *
+ * Output:
+ * 1 2 3 4
+ * 5 11 10 8
+ * 9 7 6 12
+ * 13 14 15 16
+ */
 public class ShellRotate {
 
     public static void main(String[] args) {
@@ -36,22 +66,30 @@ public class ShellRotate {
         }
     }
 
+    /**
+     * Time Complexity: O(M+N), where M and N are the number of rows and columns.
+     * Space Complexity: O(M+N), for the temporary 1D array used for the shell.
+     *
+     * Rotates the specified shell of the matrix by the given number of positions.
+     */
     private static void shellRotate(int[][] arr, int shell, int rotate) {
         int[] oned = fillOnedFromShell(arr, shell);
         doRotate(oned, rotate);
         fillShellFromOned(arr, shell, oned);
     }
 
+    /**
+     * Time Complexity: O(M+N), where M and N are the number of rows and columns.
+     * Space Complexity: O(M+N), for the 1D array created from the shell.
+     *
+     * Extracts the elements of the specified shell into a 1D array.
+     */
     private static int[] fillOnedFromShell(int[][] arr, int shell) {
         int minRow = shell - 1;
         int minCol = shell - 1;
         int maxRow = arr.length - shell;
         int maxCol = arr[0].length - shell;
 
-        // Array Size
-        // int size = lw + bw + rw + tw - 4
-        // int size = (maxRow - minRow + 1) + (maxCol - minCol + 1) + (maxRow - minRow + 1) * (maxCol - minCol + 1) - 4;
-        // int size = 2 * (maxRow - minRow + 1) +  2 * (maxCol - minCol + 1) - 4;
         int size = 2 * (maxRow - minRow + maxCol - minCol);
 
         int[] oned = new int[size];
@@ -85,6 +123,12 @@ public class ShellRotate {
         return oned;
     }
 
+    /**
+     * Time Complexity: O(M+N), where M and N are the number of rows and columns.
+     * Space Complexity: O(1), as it modifies the matrix in place.
+     *
+     * Fills the specified shell of the matrix with elements from the 1D array.
+     */
     private static void fillShellFromOned(int[][] arr, int shell, int[] oned) {
         int minRow = shell - 1;
         int minCol = shell - 1;
@@ -118,6 +162,12 @@ public class ShellRotate {
         }
     }
 
+    /**
+     * Time Complexity: O(L), where L is the length of the array.
+     * Space Complexity: O(1), in-place rotation.
+     *
+     * Rotates the 1D array by the given number of positions.
+     */
     private static void doRotate(int[] arr, int rotate) {
         rotate = rotate % arr.length;
         if (rotate < 0) rotate = rotate + arr.length;
@@ -130,6 +180,12 @@ public class ShellRotate {
         reverse(arr, 0, arr.length - 1);
     }
 
+    /**
+     * Time Complexity: O(H-L), where H and L are the high and low indices.
+     * Space Complexity: O(1), in-place reversal.
+     *
+     * Reverses the elements in the array from index l to h.
+     */
     private static void reverse(int[] arr, int l, int h) {
         while (l < h) {
             int temp = arr[l];
