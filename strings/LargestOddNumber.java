@@ -27,8 +27,8 @@ import java.util.List;
 public class LargestOddNumber {
 
     public static void main(String[] args) {
-        String str = "52";
-        String data = largestOddNumber(str);
+        String str = "0214638";
+        String data = optimal(str);
         System.err.println(data);
     }
 
@@ -48,5 +48,20 @@ public class LargestOddNumber {
             }
         }
         return max != 0 ? max + "" : "";
+    }
+
+    private static String optimal(String str) {
+        int idx = 0;
+        for (int i = str.length() - 1; i >= 0; i--) {
+            if ((str.charAt(i) - '0') % 2 == 1) {
+                idx = i;
+                break;
+            }
+        }
+        int i = 0;
+        while (i <= idx && str.charAt(i) == '0') {
+            i++;
+        }
+        return str.substring(i, idx);
     }
 }
