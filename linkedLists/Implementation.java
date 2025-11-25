@@ -33,9 +33,26 @@ public class Implementation {
 
             size++;
         }
+
+        private void display() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " -> ");
+                temp = temp.next;
+            }
+        }
+
+        private int size() {
+            return this.size;
+        }
     }
 
     public static void main(String[] args) {
-
+        LinkedList list = new LinkedList();
+        list.addLast(1);
+        list.addLast(2);
+        list.addLast(3);
+        list.addLast(4);
+        list.display();
     }
 }
