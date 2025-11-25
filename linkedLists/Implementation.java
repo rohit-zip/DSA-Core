@@ -45,6 +45,18 @@ public class Implementation {
         private int size() {
             return this.size;
         }
+
+        private void removeFirst() {
+            if (size == 0)
+                System.out.println("The list is empty");
+            else if (size == 1) {
+                head = tail = null;
+                size = 0;
+            } else {
+                head = head.next;
+                size--;
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -53,6 +65,7 @@ public class Implementation {
         list.addLast(2);
         list.addLast(3);
         list.addLast(4);
+        list.removeFirst();
         list.display();
     }
 }
