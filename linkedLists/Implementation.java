@@ -89,6 +89,20 @@ public class Implementation {
 
             return temp.data;
         }
+
+        private void addFirst(int data) {
+            Node node = new Node();
+            node.data = data;
+
+            if (size == 0) {
+                head = tail = node;
+            } else {
+                node.next = head;
+                head = node;
+            }
+
+            size++;
+        }
     }
 
     public static void main(String[] args) {
