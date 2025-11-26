@@ -103,6 +103,30 @@ public class Implementation {
 
             size++;
         }
+
+        private void addAt(int index, int data) {
+            if (index < 0 || index > size) {
+                System.out.println("Invalid Index");
+                return;
+            } else if (index == 0) {
+                addFirst(data);
+            } else if (index == size) {
+                addLast(data);
+            } else {
+                Node node = new Node();
+                node.data = data;
+                Node temp = head;
+
+                for (int i = 0 ; i < index - 1 ; i++) {
+                    temp = temp.next;
+                }
+
+                node.next = temp.next;
+                temp.next = node;
+
+                size++;
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -111,6 +135,10 @@ public class Implementation {
         list.addLast(2);
         list.addLast(3);
         list.addLast(4);
-        System.out.println(list.getAt(4));
+        list.addLast(5);
+        list.display();
+        list.addAt(2, 10);
+        System.out.println();
+        list.display();
     }
 }
