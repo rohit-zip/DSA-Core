@@ -57,6 +57,38 @@ public class Implementation {
                 size--;
             }
         }
+
+        private int getFirst() {
+            if (size == 0) {
+                System.out.println("The list is empty");
+                return -1;
+            }
+            return head.data;
+        }
+
+        private int getLast() {
+            if (size == 0) {
+                System.out.println("The list is empty");
+            }
+            return tail.data;
+        }
+
+        private int getAt(int index) {
+            if (size == 0) {
+                System.out.println("The list is empty");
+                return -1;
+            }
+            if (index >= size || index < 0) {
+                System.out.println("Invalid Index");
+                return -1;
+            }
+            Node temp = head;
+            for (int i = 0 ; i < index ; i++) {
+                temp = temp.next;
+            }
+
+            return temp.data;
+        }
     }
 
     public static void main(String[] args) {
@@ -65,7 +97,6 @@ public class Implementation {
         list.addLast(2);
         list.addLast(3);
         list.addLast(4);
-        list.removeFirst();
-        list.display();
+        System.out.println(list.getAt(4));
     }
 }
