@@ -127,6 +127,25 @@ public class Implementation {
                 size++;
             }
         }
+
+        private void removeLast() {
+            if (size == 0) {
+                System.err.println("This list is empty");
+                return;
+            } else if (size == 1) {
+                head = tail = null;
+                size = 0;
+            } else {
+                Node temp = head;
+                for (int i = 0 ; i < size - 2 ; i++) {
+                    temp = temp.next;
+                }
+
+                tail = temp;
+                tail.next = null;
+                size--;
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -136,9 +155,9 @@ public class Implementation {
         list.addLast(3);
         list.addLast(4);
         list.addLast(5);
-        list.display();
         list.addAt(2, 10);
         System.out.println();
+        list.removeLast();
         list.display();
     }
 }
