@@ -146,6 +146,25 @@ public class Implementation {
                 size--;
             }
         }
+
+        private void removeAt(int index) {
+            if (index < 0 || index >= size) {
+                System.out.println("Invalid Index");
+                return;
+            } else if (index == 0) {
+                removeFirst();
+            } else if (index == size - 1) {
+                removeLast();
+            } else {
+                Node temp = head;
+                for (int i = 0 ; i < index - 1 ; i++) {
+                    temp = temp.next;
+                }
+
+                temp.next = temp.next.next;
+                size--;
+            }
+        }
     }
 
     public static void main(String[] args) {
