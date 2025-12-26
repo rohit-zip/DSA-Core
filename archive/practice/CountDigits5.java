@@ -1,17 +1,19 @@
-package basics;
+package practice;
 
-public class CountDigits {
+public class CountDigits5 {
+
     public static void main(String[] args) {
-        int digits = countDigits(934562);
+        int digits = countDigits(1234);
         System.out.println(digits);
     }
 
     private static int countDigits(int n) {
-        int counter = 0;
+        int count = 0;
         while (n != 0) {
-            counter++;
+            count++;
             n = n/10;
         }
-        return counter;
+        return count;
     }
+
 }
