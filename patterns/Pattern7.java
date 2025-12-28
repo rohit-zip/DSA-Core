@@ -2,7 +2,7 @@ package patterns;
 
 public class Pattern7 {
     public static void main(String[] args) {
-        pattern7(5);
+        optimized(5);
     }
 
     private static void pattern7(int n) {
@@ -14,6 +14,19 @@ public class Pattern7 {
 
             System.out.print("*\t");
             space++;
+            System.out.println();
+        }
+    }
+
+    private static void optimized(int n) {
+        for (int i = 1 ; i <= n ; i++) {
+            for (int j = 1 ; j <= n ; j++) {
+                if (i == j) {
+                    System.out.print("*\t");
+                } else {
+                    System.out.print("\t");
+                }
+            }
             System.out.println();
         }
     }
