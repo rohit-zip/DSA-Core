@@ -2,7 +2,7 @@ package basics;
 
 public class AnyBaseToDecimal {
     public static void main(String[] args) {
-        int data = abtd(1172, 8);
+        int data = abtd(172, 8);
         System.out.println(data);
     }
 
